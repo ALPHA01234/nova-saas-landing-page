@@ -42,3 +42,10 @@ h1,h2,h3{letter-spacing:-.055em}
 .footer-bottom b{color:#d4c7a9}
 @media(max-width:1050px){.hero{grid-template-columns:1fr;gap:45px}.feature-grid{grid-template-columns:1fr 1fr}.feature-large{grid-column:span 2}}
 @media(max-width:720px){.hero{padding-top:55px;padding-bottom:55px}.feature-grid{grid-template-columns:1fr}.feature-large{grid-column:auto}.section{padding:72px 0}.announcement{font-size:10px}}
+
+/* Scroll reveal: restrained movement and staggered timing. */
+.reveal-on-scroll{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal-on-scroll.is-visible{opacity:1;transform:translateY(0);will-change:auto}
+.hero-copy.reveal-on-scroll{transform:translateY(14px)}
+.hero-copy.reveal-on-scroll.is-visible{transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal-on-scroll,.reveal-on-scroll.is-visible{opacity:1;transform:none;transition:none;will-change:auto}}
